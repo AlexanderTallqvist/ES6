@@ -38,3 +38,20 @@ function commentsForPosts(post, comments) {
 var commentsForPost = commentsForPosts(posts, comments);
 
 console.log(commentsForPost);
+
+
+// Filter unique numbers
+
+var filterArray = [1, 1, 2, 3, 4, 4, 4, 4, 6];
+var list = filterArray.filter((x, i, a) => a.indexOf(x) == i);
+
+console.log(list);
+
+// Index of first 1 == 0, current index == 0, true
+// Index of first 1 == 0, current index == 1, false
+// Index of first 2 == 2, current index == 2, true
+// Index of first 3 == 3, current index == 3, true
+
+// x --> item in array
+// i --> index of item
+// a --> array reference, (in this case "filterArray")
