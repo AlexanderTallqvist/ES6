@@ -89,3 +89,28 @@ function CounterES6() {
 
 let counterB = new CounterES6();
 window.setTimeout(() => console.log(counterB.seconds), 1200);
+
+
+// More examples of how to use fat-arrow functions
+
+
+var calculate = {
+  array: [1, 2, 3],
+  sum: () => {
+    console.log(this === window); // => true
+    return this.array.reduce((result, item) => result + item);
+  }
+};
+console.log(this === window); // => true
+// Throws "TypeError: Cannot read property 'reduce' of undefined"
+calculate.sum();
+
+
+var calculate = {
+  array: [1, 2, 3],
+  sum() {
+    console.log(this === calculate); // => true
+    return this.array.reduce((result, item) => result + item);
+  }
+};
+calculate.sum(); // => 6
